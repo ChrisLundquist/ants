@@ -9,6 +9,8 @@ class Ant
     attr_accessor :alive
 
     attr_accessor :orders
+    attr_accessor :path_finder
+
 
     def initialize(options)
       alive = options[:alive]
@@ -23,6 +25,7 @@ class Ant
         )
         @alive, @owner, @square = alive, owner, square
         @orders = Array.new
+        square.ant = self
     end
 
     # True if ant is alive.
@@ -82,7 +85,6 @@ class Ant
 
     def go
         # get rid of this square of the path
-        next_square = orders.shift
         order(orders.shift) if orders.any?
     end
 end

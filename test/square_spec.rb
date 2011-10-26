@@ -81,5 +81,12 @@ describe Square do
       @map[0][-1].water = true
       @map[0][0].walkable_neighbors.count.should == 0
     end
+    
+    it "should not return tiles with friendly ants" do
+      @ant = Ant.new( :alive => true, :owner => 0, :square => @map[0][1])
+      neighbors = @map[0][0].walkable_neighbors
+      neighbors.count.should == 3
+      neighbors.should_not include(@ant.square)
+    end
   end
 end

@@ -1,6 +1,6 @@
 require "ants"
 class Map
-  attr_accessor :rows, :cols, :grid
+  attr_accessor :rows, :cols, :grid, :food, :hills
 
   def initialize(attributes)
     raise ArguementError.new("Need :rows, and :cols") unless attributes[:rows] and attributes[:cols]
@@ -8,6 +8,8 @@ class Map
     @rows = attributes[:rows]
     @cols = attributes[:cols]
     @grid = Array.new(@rows){|row| Array.new(@cols){|col| Square.new false, false, false, nil, row, col, self } }
+    @food = Array.new
+    @hills = Array.new
   end
 
   def [](index)
@@ -15,6 +17,9 @@ class Map
   end
 
   def reset!
+    @food = Array.new
+    @hills = Array.new
+
     @grid.each do |row|
       row.each do |square|
         square.food=false
@@ -22,10 +27,6 @@ class Map
         square.hill=false
       end
     end
-  end
-
-  def flatten
-    return @grid.flatten
   end
 
     # If row or col are greater than or equal map width/height, makes them fit the map.

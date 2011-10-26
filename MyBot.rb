@@ -9,9 +9,10 @@ end
 
 ai.run do |ai|
 	# your turn code here
-    map = ai.map.flatten
+    map = ai.map
 
-    foods = map.select { |square| square.food? }
+    foods = map.food
+    hills = map.hills
     enemies = ai.enemy_ants
 
     idle_ants = ai.my_ants.reject { |ant| ant.busy? }

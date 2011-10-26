@@ -138,20 +138,20 @@ class AI
                 @map[row][col].water=true
             when 'f'
                 @map[row][col].food=true
+                @map.food << @map[row][col]
             when 'h'
                 @map[row][col].hill=owner
+                @map.hills << @map[row][col]
             when 'a'
                 a=Ant.new( :alive => true, :owner => owner, :square => @map[row][col])
-                @map[row][col].ant = a
 
                 if a.mine?
-                    my_ants.push a
+                    my_ants.push(a)
                 else
-                    enemy_ants.push a
+                    enemy_ants.push(a)
                 end
             when 'd'
-                d = Ant.new( :alive => false, :owner => owner, :square => @map[row][col])
-                @map[row][col].ant = d
+                Ant.new( :alive => false, :owner => owner, :square => @map[row][col])
             when 'r'
                 # pass
             else

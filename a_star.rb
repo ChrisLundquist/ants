@@ -13,7 +13,7 @@ class AStar
             spot, path_so_far, cost_so_far = pqueue.next
             next if been_there[spot]
             newpath = path_so_far + [spot]
-            return newpath if (spot == goal)
+            return newpath[1..-1] if (spot == goal)
             been_there[spot] = 1
             @adjacency.call(spot).each do |newspot|
                 next if been_there[newspot]
