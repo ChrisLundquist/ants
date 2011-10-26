@@ -141,16 +141,16 @@ class AI
             when 'h'
                 @map[row][col].hill=owner
             when 'a'
-                a=Ant.new true, owner, @map[row][col], self
+                a=Ant.new( :alive => true, :owner => owner, :square => @map[row][col])
                 @map[row][col].ant = a
 
-                if owner==0
+                if a.mine?
                     my_ants.push a
                 else
                     enemy_ants.push a
                 end
             when 'd'
-                d=Ant.new false, owner, @map[row][col], self
+                d = Ant.new( :alive => false, :owner => owner, :square => @map[row][col])
                 @map[row][col].ant = d
             when 'r'
                 # pass

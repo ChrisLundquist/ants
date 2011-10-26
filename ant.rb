@@ -6,17 +6,22 @@ class Ant
     # Square this ant sits on.
     attr_accessor :square
 
-    attr_accessor :alive, :ai
+    attr_accessor :alive
 
     attr_accessor :orders
 
-    def initialize alive, owner, square, ai
+    def initialize(options)
+      alive = options[:alive]
+      owner = options[:owner]
+      square = options[:square]
+      raise ArgumentError.new("Require :alive,:owner,:square") unless options.keys.count == 3
+
         @path_finder ||= AStar.new(
             lambda {|spot| spot.walkable_neighbors }, 
             lambda {|spot,new_spot| heuristic_cost_estimate(spot,new_spot) }, 
             lambda {|goal, new_spot| goal.distance(new_spot) } 
         )
-        @alive, @owner, @square, @ai = alive, owner, square, ai
+        @alive, @owner, @square = alive, owner, square
         @orders = Array.new
     end
 
@@ -58,7 +63,6 @@ class Ant
         return 0
     end
 
-    # Order this ant to go in given direction. Equivalent to ai.order ant, direction.
     def order(next_square)
         direction = case next_square
                     when square.north
