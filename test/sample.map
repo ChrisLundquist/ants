@@ -1,0 +1,647 @@
+turn 0
+rows 43
+cols 39
+player_seed 5473956936721005000
+turntime 1000
+spawnradius2 1
+viewradius2 77
+loadtime 3000
+turns 100
+attackradius2 5
+players 2
+ready
+turn 1
+w 19 17
+w 19 21
+w 20 18
+w 20 19
+w 20 20
+w 22 18
+w 22 19
+w 22 20
+h 14 19 0
+a 14 19 0
+f 7 21
+go
+turn 2
+h 14 19 0
+a 14 18 0
+f 7 21
+f 21 13
+go
+turn 3
+h 14 19 0
+a 14 17 0
+f 7 21
+f 21 13
+go
+turn 4
+h 14 19 0
+a 14 16 0
+f 7 21
+f 21 13
+go
+turn 5
+h 14 19 0
+a 14 15 0
+f 21 10
+f 21 13
+go
+turn 6
+h 14 19 0
+a 14 14 0
+f 21 10
+f 21 13
+go
+turn 7
+h 14 19 0
+a 14 13 0
+f 21 10
+f 21 13
+go
+turn 8
+w 11 4
+w 12 4
+w 13 4
+w 14 4
+w 15 4
+w 16 4
+w 17 4
+h 14 19 0
+a 14 12 0
+f 21 10
+f 21 13
+go
+turn 9
+w 9 4
+w 10 4
+w 11 3
+w 12 3
+w 13 3
+w 14 3
+w 15 3
+w 16 3
+w 17 3
+w 18 4
+w 19 4
+h 14 19 0
+a 14 11 0
+f 21 10
+f 21 13
+go
+turn 10
+w 8 4
+w 9 3
+w 10 3
+w 11 2
+w 12 2
+w 13 2
+w 14 2
+w 15 2
+w 16 2
+w 17 2
+w 18 3
+w 19 3
+w 20 4
+a 14 10 0
+f 21 10
+f 21 13
+go
+turn 11
+w 7 4
+w 8 3
+w 9 2
+w 10 2
+w 11 1
+w 12 1
+w 13 1
+w 14 1
+w 15 1
+w 16 1
+w 17 1
+w 18 2
+w 19 2
+w 20 3
+w 21 4
+a 14 9 0
+f 21 10
+f 21 13
+go
+turn 12
+w 7 3
+w 8 2
+w 9 1
+w 10 1
+w 11 0
+w 12 0
+w 13 0
+w 14 0
+w 15 0
+w 16 0
+w 17 0
+w 18 1
+w 19 1
+w 20 2
+w 21 3
+a 14 8 0
+f 21 10
+f 21 13
+go
+turn 13
+w 6 4
+w 7 2
+w 8 1
+w 9 0
+w 10 0
+w 11 38
+w 12 38
+w 13 38
+w 14 38
+w 15 38
+w 16 38
+w 17 38
+w 18 0
+w 19 0
+w 20 1
+w 21 2
+w 22 4
+a 14 7 0
+f 21 10
+go
+turn 14
+w 6 3
+w 7 1
+w 8 0
+w 9 38
+w 10 38
+w 11 37
+w 12 37
+w 13 37
+w 14 37
+w 15 37
+w 16 37
+w 17 37
+w 18 38
+w 19 38
+w 20 0
+w 21 1
+w 22 3
+a 14 6 0
+f 21 10
+go
+turn 15
+w 6 2
+w 7 0
+w 8 38
+w 9 37
+w 10 37
+w 11 36
+w 12 36
+w 13 36
+w 14 36
+w 15 36
+w 16 36
+w 17 36
+w 18 37
+w 19 37
+w 20 38
+w 21 0
+w 22 2
+a 14 5 0
+f 21 10
+go
+turn 16
+a 14 5 0
+f 21 10
+go
+turn 17
+a 14 5 0
+f 21 10
+go
+turn 18
+a 14 5 0
+f 21 10
+go
+turn 19
+a 14 5 0
+f 21 10
+go
+turn 20
+a 14 5 0
+f 21 10
+go
+turn 21
+a 14 5 0
+f 21 10
+go
+turn 22
+a 14 5 0
+f 21 10
+go
+turn 23
+a 14 5 0
+f 21 10
+go
+turn 24
+a 14 5 0
+f 21 10
+go
+turn 25
+a 14 5 0
+f 21 10
+go
+turn 26
+a 14 5 0
+f 21 10
+go
+turn 27
+a 14 5 0
+f 21 10
+go
+turn 28
+a 14 5 0
+f 21 10
+go
+turn 29
+a 14 5 0
+f 21 10
+go
+turn 30
+a 14 5 0
+f 21 10
+go
+turn 31
+a 14 5 0
+f 21 10
+go
+turn 32
+a 14 5 0
+f 21 10
+go
+turn 33
+a 14 5 0
+f 21 10
+go
+turn 34
+a 14 5 0
+f 21 10
+go
+turn 35
+a 14 5 0
+f 21 10
+go
+turn 36
+a 14 5 0
+f 21 10
+go
+turn 37
+a 14 5 0
+f 21 10
+go
+turn 38
+a 14 5 0
+f 21 10
+go
+turn 39
+a 14 5 0
+f 21 10
+go
+turn 40
+a 14 5 0
+f 21 10
+go
+turn 41
+a 14 5 0
+f 21 10
+go
+turn 42
+a 14 5 0
+f 21 10
+go
+turn 43
+a 14 5 0
+f 21 10
+go
+turn 44
+a 14 5 0
+f 21 10
+go
+turn 45
+a 14 5 0
+f 21 10
+go
+turn 46
+a 14 5 0
+f 21 10
+go
+turn 47
+a 14 5 0
+f 21 10
+go
+turn 48
+a 14 5 0
+f 21 10
+go
+turn 49
+a 14 5 0
+f 21 10
+go
+turn 50
+a 14 5 0
+f 21 10
+go
+turn 51
+a 14 5 0
+f 19 10
+f 21 10
+go
+turn 52
+a 14 5 0
+f 19 10
+f 21 10
+go
+turn 53
+a 14 5 0
+f 19 10
+f 21 10
+go
+turn 54
+a 14 5 0
+f 19 10
+f 21 10
+go
+turn 55
+a 14 5 0
+f 19 10
+f 21 10
+go
+turn 56
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 57
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 58
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 59
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 60
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 61
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 62
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 63
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 64
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 65
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 66
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 67
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 68
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 69
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 70
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 71
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 72
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 73
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 74
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 75
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 76
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 77
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 78
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 79
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 80
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 81
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 82
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 83
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 84
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 85
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 86
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 87
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 88
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 89
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 90
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 91
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 92
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 93
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 94
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 95
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 96
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 97
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 98
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 99
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
+turn 100
+a 14 5 0
+f 16 10
+f 19 10
+f 21 10
+go
