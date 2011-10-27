@@ -9,7 +9,8 @@ class AStar
         been_there = {}
         pqueue = PriorityQueue.new
         pqueue << [1, [start, [], 0]]
-        while !pqueue.empty?
+        # Less than 25 is arbitrary
+        while(!pqueue.empty? and pqueue.list.length < 25)
             spot, path_so_far, cost_so_far = pqueue.next
             next if been_there[spot]
             newpath = path_so_far + [spot]
@@ -28,6 +29,7 @@ class AStar
     end   
 
     class PriorityQueue
+        attr :list
         def initialize
             @list = []
         end

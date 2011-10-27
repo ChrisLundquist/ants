@@ -140,4 +140,24 @@ describe AStar do
     # Make sure we can get to the first square
     @ant.square.walkable_neighbors.should include(orders.first)
   end
+
+  it "should not let ants collide by both moving to the same square" do
+    @ant2 = Ant.new(:alive => true, :owner => 0, :square => @map[1][1])
+
+    # ants both trying to move to [0][1]
+    target = @map[0][1]
+    orders = @ant.path_finder.find_path(@ant.square,target)
+    orders.count.should == 4
+    # Make sure the last square is what we wanted
+    orders.last.should == target
+    # Make sure we can get to the first square
+    @ant.square.walkable_neighbors.should include(orders.first)
+
+    target = @map[0][1]
+    orders = @ant2.path_finder.find_path(@ant.square,target)
+    # Since someone else is moving there we aren't allowed to
+    @ant2.orders.should_not include(target)
+    # Move command should fail
+    orders.count.should == 0
+  end
 end

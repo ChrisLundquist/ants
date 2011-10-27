@@ -13,14 +13,16 @@ ai.run do |ai|
 
     foods = map.food
     hills = map.hills
-    enemies = ai.enemy_ants
+    enemies = map.enemy_ants
+    my_ants = map.my_ants
 
-    idle_ants = ai.my_ants.reject { |ant| ant.busy? }
+    idle_ants = my_ants.reject { |ant| ant.busy? }
 
     # Send idle ants to get food
     idle_ants.each do |ant|
       while(foods.any? and ant.idle?)
-        ant.move!(foods.shift)
+        ant.path(foods.shift)
+        ant.go!
       end
     end
 end

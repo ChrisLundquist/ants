@@ -1,15 +1,17 @@
 require "ants"
 class Map
-  attr_accessor :rows, :cols, :grid, :food, :hills
+  attr_accessor :rows, :cols, :grid, :food, :hills, :my_ants, :enemy_ants
 
   def initialize(attributes)
-    raise ArguementError.new("Need :rows, and :cols") unless attributes[:rows] and attributes[:cols]
+    raise ArgumentError.new("Need :rows, and :cols") unless attributes[:rows] and attributes[:cols]
 
     @rows = attributes[:rows]
     @cols = attributes[:cols]
     @grid = Array.new(@rows){|row| Array.new(@cols){|col| Square.new false, false, false, nil, row, col, self } }
     @food = Array.new
     @hills = Array.new
+    @my_ants = Array.new
+    @enemy_ants = Array.new
   end
 
   def [](index)
@@ -19,6 +21,8 @@ class Map
   def reset!
     @food = Array.new
     @hills = Array.new
+    @my_ants = Array.new
+    @enemy_ants = Array.new
 
     @grid.each do |row|
       row.each do |square|

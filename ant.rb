@@ -56,13 +56,15 @@ class Ant
     end
 
     # AI path to the destination square
-    def move!(destination)
+    def path(destination)
         @orders = @path_finder.find_path(square,destination)
-        go()
     end
 
     # TODO
     def heuristic_cost_estimate(spot, new_spot)
+        return -10 if new_spot.food?
+        return 10 if new_spot.hill?
+        return 10 if new_spot.ant?
         return 0
     end
 
@@ -81,9 +83,11 @@ class Ant
                     end
 
         STDOUT.puts "o #{row} #{col} #{direction.to_s.upcase}"
+        square.ant = nil
+        next_square.ant = self
     end
 
-    def go
+    def go!
         # get rid of this square of the path
         order(orders.shift) if orders.any?
     end
