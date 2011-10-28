@@ -15,13 +15,27 @@ class AI
   # Array of scores of players (you are player 0). Available only after game's over.
   attr_accessor :score
 
+  def phalanx(ants)
+    my_hill = map.my_hill
+
+    defense_size = Math.sqrt(ants.count).floor * 2
+    ants.each do |ant|
+      ant.path( lambda { |square| square.distance(my_hill) > ant.square.distance(my_hill) or square.distance(my_hill) > defense_size} )
+      ant.go!
+    end
+  end
+
+  def stagger(ants)
+    ants.each do |ant|
+      ant.path( lambda { |square| square.walkable_neighbors.count >= 3 })
+      ant.go!
+    end
+  end
+
   # Initialize a new AI object. Arguments are streams this AI will read from and write to.
   def initialize stdin=$stdin, stdout=$stdout
     @stdin, @stdout = stdin, stdout
-
-    @map=nil
     @turn_number=0
-
     @did_setup=false
   end
 
@@ -156,6 +170,7 @@ class AI
         @map.food << @map[row][col]
       when 'h'
         @map[row][col].hill = owner
+        @map.hills[owner] = @map[row][col]
       when 'a'
         a=Ant.new( :alive => true, :owner => owner, :square => @map[row][col])
 

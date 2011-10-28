@@ -9,13 +9,12 @@ class Ant
     attr_accessor :alive
 
     attr_accessor :orders
-    attr_accessor :path_finder
-
-
 
     def self.heuristic_cost_estimate(spot, new_spot)
+        return -100 if new_spot.hill? and new_spot.hill? != 0
         return -10 if new_spot.food?
-        return 10 if new_spot.hill?
+        # We really don't want to step on our own hill
+        return 100 if new_spot.hill and new_spot.hill? == 0
         return 10 if new_spot.ant?
         return 0
     end
