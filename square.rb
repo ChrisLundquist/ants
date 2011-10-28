@@ -21,7 +21,11 @@ class Square
     end
 
     def ==(rhs)
-      col == rhs.col && row == rhs.row
+      if rhs.is_a?(Square)
+          return col == rhs.col && row == rhs.row
+      elsif rhs.is_a?(Proc)
+          return rhs.call(self)
+      end
     end
 
     def initialize water, food, hill, ant, row, col, map

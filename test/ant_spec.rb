@@ -22,4 +22,11 @@ describe Ant do
     square.ant.should == @ant
     start.ant.should be_nil
   end
+
+  it "should be able path to a lambda expression" do
+    food_square = @map[0][5]
+    food_square.food = true
+    @ant.path( lambda { |square| square.food? })
+    @ant.orders.last.should == food_square
+  end
 end

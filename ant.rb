@@ -12,17 +12,29 @@ class Ant
     attr_accessor :path_finder
 
 
+
+    def self.heuristic_cost_estimate(spot, new_spot)
+        return -10 if new_spot.food?
+        return 10 if new_spot.hill?
+        return 10 if new_spot.ant?
+        return 0
+    end
+
+    def self.path(start,goal)
+      @@path_finder ||= AStar.new(
+        lambda {|spot| spot.walkable_neighbors }, 
+        lambda {|spot,new_spot| Ant.heuristic_cost_estimate(spot,new_spot) }, 
+        lambda {|goal, new_spot| if(goal.is_a?(Square)) then goal.distance(new_spot) else 1 end } 
+      )
+      @@path_finder.find_path(start,goal)
+    end
+
     def initialize(options)
       alive = options[:alive]
       owner = options[:owner]
       square = options[:square]
       raise ArgumentError.new("Require :alive,:owner,:square") unless options.keys.count == 3
 
-        @path_finder ||= AStar.new(
-            lambda {|spot| spot.walkable_neighbors }, 
-            lambda {|spot,new_spot| heuristic_cost_estimate(spot,new_spot) }, 
-            lambda {|goal, new_spot| goal.distance(new_spot) } 
-        )
         @alive, @owner, @square = alive, owner, square
         @orders = Array.new
         square.ant = self
@@ -57,16 +69,9 @@ class Ant
 
     # AI path to the destination square
     def path(destination)
-        @orders = @path_finder.find_path(square,destination)
+        @orders = Ant.path(square,destination)
     end
 
-    # TODO
-    def heuristic_cost_estimate(spot, new_spot)
-        return -10 if new_spot.food?
-        return 10 if new_spot.hill?
-        return 10 if new_spot.ant?
-        return 0
-    end
 
     def order(next_square)
         direction = case next_square
@@ -85,6 +90,8 @@ class Ant
         STDOUT.puts "o #{row} #{col} #{direction.to_s.upcase}"
         square.ant = nil
         next_square.ant = self
+        next_square.food = nil
+        next_square.hill = nil unless next_square.hill? == 0
     end
 
     def go!

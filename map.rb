@@ -1,6 +1,6 @@
 require "ants"
 class Map
-  attr_accessor :rows, :cols, :grid, :food, :hills, :my_ants, :enemy_ants
+  attr_accessor :rows, :cols, :grid, :food, :my_ants, :enemy_ants
 
   def initialize(attributes)
     raise ArgumentError.new("Need :rows, and :cols") unless attributes[:rows] and attributes[:cols]
@@ -9,7 +9,6 @@ class Map
     @cols = attributes[:cols]
     @grid = Array.new(@rows){|row| Array.new(@cols){|col| Square.new false, false, false, nil, row, col, self } }
     @food = Array.new
-    @hills = Array.new
     @my_ants = Array.new
     @enemy_ants = Array.new
   end
@@ -18,17 +17,21 @@ class Map
       @grid[index]
   end
 
+  def hills
+    @hills ||= grid.flatten.select { |square| square.hill? }
+  end
+
   def reset!
     @food = Array.new
-    @hills = Array.new
+    @hills = nil
     @my_ants = Array.new
     @enemy_ants = Array.new
 
     @grid.each do |row|
       row.each do |square|
-        square.food=false
+        #square.food=false
         square.ant=nil
-        square.hill=false
+        #square.hill=false
       end
     end
   end

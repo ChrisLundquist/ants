@@ -155,8 +155,7 @@ class AI
         @map[row][col].food=true
         @map.food << @map[row][col]
       when 'h'
-        @map[row][col].hill=owner
-        @map.hills << @map[row][col]
+        @map[row][col].hill = owner
       when 'a'
         a=Ant.new( :alive => true, :owner => owner, :square => @map[row][col])
 
