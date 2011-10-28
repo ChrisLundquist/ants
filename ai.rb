@@ -27,7 +27,7 @@ class AI
 
   def stagger(ants)
     ants.each do |ant|
-      ant.path( lambda { |square| square.walkable_neighbors.count >= 3 })
+      ant.path( lambda { |square| square.walkable_neighbors.count == 4 })
       ant.go!
     end
   end
@@ -162,17 +162,18 @@ class AI
       row, col = row.to_i, col.to_i
       owner = owner.to_i if owner
 
+      square = @map[row][col]
       case type
       when 'w'
-        @map[row][col].water=true
+        square.water=true
       when 'f'
-        @map[row][col].food=true
-        @map.food << @map[row][col]
+        square.food=true
+        @map.food << square
       when 'h'
-        @map[row][col].hill = owner
-        @map.hills[owner] = @map[row][col]
+        square.hill = owner
+        @map.hills[owner] = square
       when 'a'
-        a=Ant.new( :alive => true, :owner => owner, :square => @map[row][col])
+        a=Ant.new( :alive => true, :owner => owner, :square => square)
 
         if a.mine?
           map.my_ants.push(a)
@@ -180,7 +181,7 @@ class AI
           map.enemy_ants.push(a)
         end
       when 'd'
-        Ant.new( :alive => false, :owner => owner, :square => @map[row][col])
+        Ant.new( :alive => false, :owner => owner, :square => square)
       when 'r'
         # pass
       else
